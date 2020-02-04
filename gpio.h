@@ -2,8 +2,7 @@
 #define GPIO_H
 
 // GPIO (0x8000 0000 - 0x8000 FFFF)
-#define GPIO_REGISTER_READ(addr)             (*(volatile unsigned int*)(addr)) //CHECK: does there need to be * before
-#define GPIO_REGISTER_WRITE(addr)            ((volatile unsigned int*)(addr)) //CHECK: does there need to be * before
+#define GPIO_REGISTER_RW(addr)             (*(volatile unsigned int*)(addr))
 
 #define GPIO                            (0x80000000)
 #define GPIO_DATA                       (GPIO + 0x04)
