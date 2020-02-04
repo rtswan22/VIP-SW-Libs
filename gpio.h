@@ -51,12 +51,20 @@
 // Funciton Prototypes
 // CHECK: want success and failure return values for register writes?
 // CHECK: how should registers be typed? uint32_t? unsigned int?
+// Input
 void gpio_set_input(unsigned int pins);
 unsigned int gpio_read_input(unsigned int pins);
+// Output
 void gpio_set_output(unsigned int pins, unsigned int pin_outputs);
+// Interrupts
 void gpio_interrupt_enable_posedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_disable_posedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+
 void gpio_interrupt_enable_negedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_disable_negedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+
 void gpio_interrupt_clear(unsigned int pins);
-unsigned int gpio_input(unsigned int pins);
+
+unsigned int gpio_status(unsigned int pins);
 
 #endif
