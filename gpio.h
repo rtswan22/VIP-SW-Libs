@@ -64,6 +64,6 @@ void gpio_interrupt_disable_negedge(unsigned int pins); //are posedge and negedg
 
 void gpio_interrupt_clear(unsigned int pins);
 
-unsigned int gpio_status(unsigned int pins);
+unsigned int gpio_interrupt_status(unsigned int pins);
 
 #endif
