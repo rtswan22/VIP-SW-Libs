@@ -48,8 +48,9 @@
 #define GPIOALL                         (0xFFFFFFFF)
 
 // Funciton Prototypes
-//// CHECK: want success and failure return values for register writes?
-//// CHECK: how should registers be typed? uint32_t? unsigned int?
+//// CHECK: want success and failure return values for register writes? not for now
+//// CHECK: how should registers be typed? uint32_t if in standard C
+// ADD: general register read and write functions
 //// Input
 void gpio_set_input(unsigned int pins);
 unsigned int gpio_read_input(unsigned int pins);
