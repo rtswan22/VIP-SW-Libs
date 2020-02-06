@@ -20,8 +20,8 @@ void gpio_interrupt_enable_posedge(unsigned int pins) {
   REGISTER32_RW(GPIO_INTERRUPT_ENABLE) |= pins;
 }
 void gpio_interrupt_disable_posedge(unsigned int pins) {
-REGISTER32_RW(GPIO_INTERRUPT_ENABLE) &= ~pins;
-REGISTER32_RW(GPIO_POSITIVE_EDGE) &= ~pins;
+  REGISTER32_RW(GPIO_INTERRUPT_ENABLE) &= ~pins;
+  REGISTER32_RW(GPIO_POSITIVE_EDGE) &= ~pins;
 }
 
 void gpio_interrupt_enable_negedge(unsigned int pins) {
