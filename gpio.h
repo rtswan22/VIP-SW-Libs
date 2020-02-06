@@ -1,9 +1,9 @@
 #ifndef GPIO_H
 #define GPIO_H
 
-// GPIO (0x8000 0000 - 0x8000 FFFF)
-#define GPIO_REGISTER_RW(addr)             (*(volatile unsigned int*)(addr))
+#include "common.h" //CHECK
 
+// GPIO (0x8000 0000 - 0x8000 FFFF)
 #define GPIO                            (0x80000000)
 #define GPIO_DATA                       (GPIO + 0x04)
 #define GPIO_DATA_DIRECTION             (GPIO + 0x08)
@@ -48,20 +48,17 @@
 #define GPIOALL                         (0xFFFFFFFF)
 
 // Funciton Prototypes
-//// CHECK: want success and failure return values for register writes? not for now
-//// CHECK: how should registers be typed? uint32_t if in standard C
-// ADD: general register read and write functions
 //// Input
 void gpio_set_input(unsigned int pins);
 unsigned int gpio_read_input(unsigned int pins);
 //// Output
 void gpio_set_output(unsigned int pins, unsigned int pin_outputs);
 //// Interrupts
-void gpio_interrupt_enable_posedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
-void gpio_interrupt_disable_posedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_enable_posedge(unsigned int pins); //CHECK: are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_disable_posedge(unsigned int pins); //CHECK: are posedge and negedge mutually exclusive? should they be?
 
-void gpio_interrupt_enable_negedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
-void gpio_interrupt_disable_negedge(unsigned int pins); //are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_enable_negedge(unsigned int pins); //CHECK: are posedge and negedge mutually exclusive? should they be?
+void gpio_interrupt_disable_negedge(unsigned int pins); //CHECK: are posedge and negedge mutually exclusive? should they be?
 
 void gpio_interrupt_clear(unsigned int pins);
 
