@@ -32,11 +32,8 @@ void gpio_disable_interrupt_negedge(unsigned int pins) {
   REGISTER32_RW(GPIO_INTERRUPT_ENABLE) &= ~pins;
   REGISTER32_RW(GPIO_NEGATIVE_EDGE) &= ~pins;
 }
-void gpio_interrupt_clear(unsigned int pins) {
+void gpio_clear_interrupt(unsigned int pins) {
   REGISTER32_RW(GPIO_INTERRUPT_CLEAR) |= pins;
-}
-void gpio_interrupt_clear_all() {
-  REGISTER32_RW(GPIO_INTERRUPT_CLEAR) |= GPIOALL;
 }
 unsigned int gpio_interrupt_status(unsigned int pins) {
   return REGISTER32_RW(GPIO_INTERRUPT_STATUS) & pins;

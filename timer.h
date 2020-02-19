@@ -3,4 +3,74 @@
 
 #include "common.h"
 
+// Timer (0x8002 0000 - 0x8002 FFFF)
+// APB Registers
+#define TIMER                           (0x80020000)
+#define TIMER_IOS                       (TIMER + 0x00)
+#define TIMER_TCF                       (TIMER + 0x04)
+#define TIMER_TCNT                      (TIMER + 0x08)
+#define TIMER_TSCR                      (TIMER + 0x0C)
+#define TIMER_TOV                       (TIMER + 0x10)
+#define TIMER_TCR                       (TIMER + 0x14)
+#define TIMER_TSCR2                     (TIMER + 0x1C)
+#define TIMER_FLG1                      (TIMER + 0x20)
+#define TIMER_FLG2                      (TIMER + 0x24)
+#define TIMER_TC(channel)               (TIMER + 0x28 + (0x4 * channel))
+
+// Timer APB Register Bits
+//// IOS
+#define TIMER_IOS_INPUT(channel)       ~(1 << channel)
+#define TIMER_IOS_OUTPUT(channel)       (1 << channel)
+//// TCF
+#define TIMER_TCF_COMPARE(channel)      (1 << channel)
+//// TSCR
+#define TIMER_TSC_ENABLE                (1 << 7)
+#define TIMER_TSC_DISABLE              ~(1 << 7)
+//// TOV
+#define TIMER_TOV_ENABLE(channel)       (1 << channel)
+#define TIMER_TOV_DISABLE(channel)     ~(1 << channel)
+//// TCR
+#define TIMER_TCR_EDGE_MASK             (0x101)
+#define TIMER_TCR_EDGE_DISABLE          (0x000)
+#define TIMER_TCR_EDGE_FALLING          (0x001)
+#define TIMER_TCR_EDGE_RISING           (0x100)
+#define TIMER_TCR_EDGE_EITHER           (0x101)
+#define TIMER_TCR_OUTPUT_MASK           (0x101 << 16)
+#define TIMER_TCR_OUTPUT_DISCONNECT     (0x000 << 16)
+#define TIMER_TCR_OUTPUT_TOGGLE         (0x001 << 16)
+#define TIMER_TCR_OUTPUT_CLEAR          (0x100 << 16)
+#define TIMER_TCR_OUTPUT_SET            (0x101 << 16)
+//// TIE
+#define TIMER_TIE_ENABLE(channel)       (1 << channel)
+#define TIMER_TIE_DISABLE(channel)     ~(1 << channel)
+//// TSCR2
+#define TIMER_TSCR2_TOI_ENABLE          (1 << 7)
+#define TIMER_TSCR2_TOI_DISABLE        ~(1 << 7)
+#define TIMER_TSCR2_TCRE_ENABLE         (1 << 6)
+#define TIMER_TSCR2_TCRE_DISABLE       ~(1 << 6)
+#define TIMER_TSCR2_PRE_DIV1            (0)
+#define TIMER_TSCR2_PRE_DIV2            (1)
+#define TIMER_TSCR2_PRE_DIV4            (2)
+#define TIMER_TSCR2_PRE_DIV8            (3)
+#define TIMER_TSCR2_PRE_DIV16           (4)
+#define TIMER_TSCR2_PRE_DIV32           (5)
+#define TIMER_TSCR2_PRE_DIV64           (6)
+#define TIMER_TSCR2_PRE_DIV128          (7)
+//// FLG1
+#define TIMER_FLG1_CLEAR(channel)       (1 << channel)
+//// FLG2
+#define TIMER_FLG2_CLEAR                (1 << 7)
+
+// Function Prototypes
+void timer_enable();
+void timer_disable();
+void timer_set_output_action(unsigned int channel, unsigned int output_action);
+void timer_set_input_capture_edge(unsigned int channel, unsigned int capture_edge);
+void timer_set_prescaler(unsigned int pre_div);
+void timer_set_output_compare(unsigned int channel, unsigned int output_action, unsigned int interrupt_enable, unsigned int value);
+void timer_set_input_capture(unsigned int channel, unsigned int capture_edge, unsigned int interrupt_enable);
+void timer_read_input_capture(unsigned int channel);
+void timer_clear_interrupt(unsigned int channel);
+void timer_read_count();
+
 #endif

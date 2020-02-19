@@ -18,17 +18,7 @@
 #define PWM_CONTROL_ALIGN_CENTER        (1 << 2)
 
 #define PWM_CHANNEL_SIZE                (0x0C)
-#define PWM(channel_number)             (channel_number * PWM_CHANNEL_SIZE)
-/*#define PWM0                            (0 << PWM_CHANNEL_SIZE)
-#define PWM1                            (1 << PWM_CHANNEL_SIZE)
-#define PWM2                            (2 << PWM_CHANNEL_SIZE)
-#define PWM3                            (3 << PWM_CHANNEL_SIZE)
-#define PWM4                            (4 << PWM_CHANNEL_SIZE)
-#define PWM5                            (5 << PWM_CHANNEL_SIZE)
-#define PWM6                            (6 << PWM_CHANNEL_SIZE)
-#define PWM7                            (7 << PWM_CHANNEL_SIZE)
-#define PWM8                            (8 << PWM_CHANNEL_SIZE)
-#define PWM9                            (9 << PWM_CHANNEL_SIZE)*/
+#define PWM(channel)                    (channel * PWM_CHANNEL_SIZE)
 
 // Function Prototypes
 //// Period
