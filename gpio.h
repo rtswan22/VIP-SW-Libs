@@ -14,7 +14,7 @@
 #define GPIO_INTERRUPT_CLEAR            (GPIO + 0x14)
 #define GPIO_INTERRUPT_STATUS           (GPIO + 0x18)
 
-#define GPIO(pin)                       (1 << pin)
+#define GPION(pin)                       (1 << pin)
 #define GPIOALL_AFTX05                  (0xFF)
 #define GPIOALL                         (0xFFFFFFFF)
 

@@ -10,8 +10,7 @@ unsigned int gpio_read_input(unsigned int pins) {
 //// Output
 void gpio_enable_output(unsigned int pins, unsigned int pin_outputs) {
   REGISTER32_RW(GPIO_DATA_DIRECTION) |= pins;
-  REGISTER32_RW(GPIO_DATA) &= ~pins;
-  REGISTER32_RW(GPIO_DATA) |= pins & pin_outputs;
+  REGISTER32_RW(GPIO_DATA) = (REGISTER32_RW(GPIO_DATA) & ~pins) | (pins & pin_outputs);
 }
 //// Interrupts
 void gpio_enable_interrupt_posedge(unsigned int pins) {
