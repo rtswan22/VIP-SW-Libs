@@ -33,4 +33,4 @@ void pwm_set_active_low(unsigned int channel);
 void pwm_set_align_left(unsigned int channel);
 void pwm_set_align_center(unsigned int channel);
 
-#endif PWM_H
+#endif
