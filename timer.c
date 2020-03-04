@@ -1,10 +1,10 @@
-#inlcude "timer.h"
+#include "timer.h"
 
 void timer_enable() {
-  REGISTER32_RW(TIMER_TSC) |= TIMER_TSCR_ENABLE;
+  REGISTER32_RW(TIMER_TSCR) |= TIMER_TSCR_ENABLE;
 }
 void timer_disable() {
-  REGISTER32_RW(TIMER_TSC) &= TIMER_TSCR_DISABLE;
+  REGISTER32_RW(TIMER_TSCR) &= TIMER_TSCR_DISABLE;
 }
 void timer_set_output_action(unsigned int channel, unsigned int output_action) {
   REGISTER32_RW(TIMER_TCR) = (REGISTER32_RW(TIMER_TCR) & ~TIMER_TCR_OUTPUT_MASK(channel)) | (TIMER_TCR_OUTPUT_MASK(channel) & (output_action << channel));

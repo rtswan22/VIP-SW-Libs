@@ -28,7 +28,7 @@
 #define TIMER_TSCR_ENABLE               (1 << 7)
 #define TIMER_TSCR_DISABLE             ~(1 << 7)
 //// TOV
-#define TIMER_TOV_TOGGLE_MASK           (0xFF)
+#define TIMER_TOV_MASK           (0xFF)
 //// TCR
 #define TIMER_TCR_EDGE_MASK(channel)    (0x101 << channel)
 #define TIMER_TCR_EDGE_DISABLE          (0x000)

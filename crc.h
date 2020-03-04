@@ -42,6 +42,7 @@ void crc_start();
 void crc_reset();
 void crc_set_polynomial(unsigned int polynomial);
 void crc_set_input(unsigned int input);
+unsigned_int crc_ready();
 unsigned int crc_output();
 
 #endif
