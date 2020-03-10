@@ -1,6 +1,6 @@
 #include "gpio.h"
 
-// Description: Acts as a looping up counter when the input of GPION7 is pulled high. This example is to meant to be used with a common cathode (common ground) display. If a common anode is being used, invert the value of 'digit' for the output pins.
+// Description: Acts as a looping up-counter which is incremented each time GPION7 is pulled high. This example is to meant to be used with a common cathode (common ground) display. If a common anode is being used, invert the value of 'digit' for the output pins.
 // This demonstration would be better with a posedge interrupt but the interrupt handler has not been implemented.
 
 // 'digit' is aligned [][7:0] = [-, a, b, c, d, e, f, g] for the 7 segment display
