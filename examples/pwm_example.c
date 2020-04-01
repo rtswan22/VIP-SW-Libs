@@ -1,6 +1,6 @@
 #include "../common.h"
 #include "../pwm.h"
-#include "../inc/ccode_macros.h"
+#include "../../inc/ccode_macros.h"
 
 int main() {
   MAIN_INIT;
