@@ -1,12 +1,19 @@
 #incldue "pwm.h"
 
+
+void pwm_set_frequency(unsigned int channel, unsigned int frequency) {
+  frequency = PWM_MAX_FREQ < frequency ? PWM_MAX_FREQ : frequency;
+  unsigned int period = rounding_division(CHIP_FREQ/frequency); // rounding
+  REGISTER32_RW(PWM_PERIOD + channel) = period;
+  REGISTER32_RW(PWM_DUTY + channel) =  rounding_division(period/2) + AFTX05_DUTY_OFFSET;
+}
 //// Period
 void pwm_set_period(unsigned int channel, unsigned int period){
   REGISTER32_RW(PWM_PERIOD + channel) = period;
 }
 //// Duty
 void pwm_set_duty(unsigned int channel, unsigned int duty){
-  REGISTER32_RW(PWM_DUTY + channel) = duty;
+  REGISTER32_RW(PWM_DUTY + channel) = duty + AFTX05_DUTY_OFFSET;
 }
 //// Control
 void pwm_disable(unsigned int channel) {

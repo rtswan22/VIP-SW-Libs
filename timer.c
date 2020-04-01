@@ -33,9 +33,6 @@ void timer_clear_interrupt(unsigned int channels) { // CHECK: this only clears t
 void timer_enable_cf(unsigned int channels) {
   REGISTER32_RW(TIMER_TCF) |= TIMER_TCF_MASK & channels;
 }
-void timer_disable_cf(unsigned int channels) {
-  REGISTER32_RW(TIMER_TCF) &= ~TIMER_TCF_MASK | ~channels;
-}
 void timer_enable_tov(unsigned int channels) {
   REGISTER32_RW(TIMER_TOV) |= TIMER_TOV_MASK & channels;
 }

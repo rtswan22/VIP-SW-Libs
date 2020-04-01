@@ -12,3 +12,7 @@ void register32_and(unsigned int register32, unsigned int value32) {
 void register32_or(unsigned int register32, unsigned int value32) {
   REGISTER32_RW(register32) |= value32;
 }
+
+unsigned int rounding_division(unsigned int dividend, unsigned int divisor) {
+  return (dividend + (divisor/2)) / divisor;
+}

@@ -18,9 +18,13 @@
 #define PWM_CONTROL_ALIGN_CENTER        (1 << 2)
 
 #define PWM_CHANNEL_SIZE                (0x0C)
-#define PWMN(channel)                    (channel * PWM_CHANNEL_SIZE)
+#define PWMN(channel)                   (channel * PWM_CHANNEL_SIZE)
+
+#define PWM_MAX_FREQ                    (CHIP_FREQ/2)
+#define AFTX05_DUTY_OFFSET              (1)
 
 // Function Prototypes
+void pwm_set_frequency(unsigned int channel, unsigned int frequency);
 //// Period
 void pwm_set_period(unsigned int channel, unsigned int period);
 //// Duty

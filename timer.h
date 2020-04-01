@@ -74,7 +74,6 @@ void timer_set_input_capture(unsigned int channel, unsigned int capture_edge, un
 unsigned int timer_read_input_capture(unsigned int channel);
 void timer_clear_interrupt(unsigned int channel);
 void timer_enable_cf(unsigned int channels);
-void timer_disable_cf(unsigned int channels);
 void timer_enable_tov(unsigned int channels);
 void timer_disable_tov(unsigned int channels);
 unsigned int timer_read_count();
