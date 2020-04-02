@@ -1,4 +1,5 @@
-#include "gpio.h"
+#include "../gpio.h"
+#include "../csim_macros.h"
 
 // Description: Acts as a looping up-counter which is incremented each time GPION7 is pulled high. This example is to meant to be used with a common cathode (common ground) display. If a common anode is being used, invert the value of 'digit' for the output pins.
 // This demonstration would be better with a posedge interrupt but the interrupt handler has not been implemented.
@@ -8,6 +9,7 @@
 unsigned char digit[] = {0b1111110, 0b01100000, 0b1101101, 0b1111001, 0b0110011, 0b1011011, 0b1011111, 0b1110000, 0b1111111, 0b1110011, 0b1110111, 0b0011111, 0b1001110, 0b0111101, 0b1001111, 0b1000111};
 
 int main() {
+  MAIN_INIT;
   // Variables
   int digit_sel = 0; // 'digit' index
   int digit_count = 16; // 'digit' count
@@ -23,5 +25,5 @@ int main() {
       //CHECK: could make it wait till button release
     }
   
-  return 0;
+  MAIN_RETURN;
 }
