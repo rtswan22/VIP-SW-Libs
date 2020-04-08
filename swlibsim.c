@@ -3,7 +3,7 @@
 #include "pwm.h"
 #include "crc.h"
 #include "timer.h"
-#include "csim_macros"
+#include "csim_macros.h"
 
 int main() {
   MAIN_INIT;//asm volatile ("li sp, 0x000083FC;");
