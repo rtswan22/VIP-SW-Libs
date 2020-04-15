@@ -14,5 +14,6 @@ void register32_or(unsigned int register32, unsigned int value32) {
 }
 
 unsigned int rounding_division(unsigned int dividend, unsigned int divisor) {
+  if(divisor == 0) return 0;
   return (dividend + (divisor/2)) / divisor;
 }
