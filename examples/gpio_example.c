@@ -19,7 +19,7 @@ int main() {
   gpio_enable_input(GPION(7)); // gpio pin 7 is an input
   // Functionality
   while(1) {
-    if(gpio_read_input(GPION(7)) {
+    if(gpio_read_input(GPION(7))) {
       digit_sel = (digit_sel + 1) % digit_count;
       gpio_set_output(pins_6_0, digit[digit_sel]);
       //CHECK: could make it wait till button release
