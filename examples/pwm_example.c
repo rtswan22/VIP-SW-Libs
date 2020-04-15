@@ -1,6 +1,7 @@
 #include "../pwm.h"
 #include "../csim_macros.h"
 
+unsigned int melody_length = 80;
 unsigned int melody[] = { // source: https://www.princetronics.com/supermariothemesong/
   2637, 2637, 0, 2637,
   0, 2093, 2637, 0,
@@ -30,7 +31,9 @@ unsigned int melody[] = { // source: https://www.princetronics.com/supermariothe
 
 int main() {
   MAIN_INIT;
-  pwm_set_frequency(PWMN(0), PWM_MAX_FREQ);
   pwm_enable(PWMN(0));
+  for(int i = 0; i < melody_length; i++) {
+    pwm_set_frequency(PWMN(0), melody[i]);
+  }
   MAIN_RETURN;
 }
