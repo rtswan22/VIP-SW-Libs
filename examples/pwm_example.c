@@ -31,5 +31,6 @@ unsigned int melody[] = { // source: https://www.princetronics.com/supermariothe
 int main() {
   MAIN_INIT;
   pwm_set_frequency(PWMN(0), PWM_MAX_FREQ);
+  pwm_enable(PWMN(0));
   MAIN_RETURN;
 }
