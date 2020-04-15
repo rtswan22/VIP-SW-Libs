@@ -24,6 +24,6 @@ int main() {
       gpio_set_output(pins_6_0, digit[digit_sel]);
       //CHECK: could make it wait till button release
     }
-  
+  }
   MAIN_RETURN;
 }
