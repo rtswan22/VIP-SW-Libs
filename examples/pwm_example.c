@@ -1,4 +1,3 @@
-#include "../common.h"
 #include "../pwm.h"
 #include "../csim_macros.h"
 
