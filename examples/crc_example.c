@@ -1,6 +1,6 @@
 #include "../common.h"
 #include "../crc.h"
-#include "../ccode_macros.h"
+#include "../csim_macros.h"
 
 int main() {
   MAIN_INIT;
