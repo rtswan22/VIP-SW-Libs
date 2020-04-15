@@ -1,7 +1,7 @@
 #include "../pwm.h"
 #include "../csim_macros.h"
 
-constant int melody[] = { // source: https://www.princetronics.com/supermariothemesong/
+unsigned int melody[] = { // source: https://www.princetronics.com/supermariothemesong/
   2637, 2637, 0, 2637,
   0, 2093, 2637, 0,
   3136, 0, 0,  0,
