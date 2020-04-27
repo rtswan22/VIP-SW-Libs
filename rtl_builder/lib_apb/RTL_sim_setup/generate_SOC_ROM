@@ -1,0 +1,7 @@
+#!/bin/bash
+#$1: location of all related files
+#$2: the main file
+buildaccount="socetlnx03@128.46.75.147"
+temp_build_file=$(whoami)_${1}_temp
+$(scp -r $1 $buldaccount:~/builder/$temp_build_file)
+$(ssh socetlnx03@128.46.75.147 "cd builder; python generate_hex.py $1)
