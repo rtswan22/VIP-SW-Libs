@@ -10,6 +10,6 @@ Libraries for senior design
 export RISCV=~/rtl_builder/riscv-tools
 export PATH=~/rtl_builder/riscv-tools/bin:$PATH
 ```
-- run code using: $ python src_to_rom.py myfilename.c
+- run code using: ``` $ python src_to_rom.py myfilename.c ```
 
 **periphs.tcl**: Basic waveform setup for viewing GPIO, PWM, Timer, and CRC
