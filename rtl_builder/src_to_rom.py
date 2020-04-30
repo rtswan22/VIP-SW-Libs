@@ -14,6 +14,7 @@ ELF_ADDR = None
 INTELHEX_ADDR = OUTPUT_FOLDER + "meminit.hex"
 ROM_DATA_ADDR = OUTPUT_FOLDER + "rom.txt"
 SOC_ROM_ADDR = OUTPUT_FOLDER + "SOC_ROM.sv"
+SIM_SRC = "~/SoCET_Public/sram_controller/src/"
 
 RESOURCE_FOLDER = "./res/"
 LINKER_ADDR = RESOURCE_FOLDER + "link.ld"
@@ -148,7 +149,7 @@ def intelhex_to_rom():
 
     rom.close();
     os.system("cat {} {} {} > {}".format(ROM_PRE_ADDR, ROM_DATA_ADDR, ROM_POST_ADDR, SOC_ROM_ADDR))
-    os.system("cp {} ~/SoCET_Public/sram_controller/src".format(SOC_ROM_ADDR))
+    os.system("cp {} {}".format(SOC_ROM_ADDR, SIM_SRC))
 
 
 if __name__ == "__main__":
